@@ -1,0 +1,101 @@
+{
+  "scripts": {
+    "cert-pinning/bypass-okhttp": {
+      "description": "Bypass OkHttp3/4 CertificatePinner SSL pinning",
+      "category": "cert-pinning",
+      "tags": ["okhttp", "ssl", "pinning"]
+    },
+    "cert-pinning/bypass-trustmanager": {
+      "description": "Hook X509TrustManager and install permissive TrustManager; covers NetworkSecurityConfig",
+      "category": "cert-pinning",
+      "tags": ["trustmanager", "ssl", "pinning", "webview"]
+    },
+    "cert-pinning/bypass-conscrypt": {
+      "description": "Hook Conscrypt TrustManagerImpl and NetworkSecurityTrustManager (API 24+)",
+      "category": "cert-pinning",
+      "tags": ["conscrypt", "ssl", "pinning"]
+    },
+    "cert-pinning/bypass-flutter": {
+      "description": "Patch Flutter BoringSSL ssl_verify_peer_cert via native hook",
+      "category": "cert-pinning",
+      "tags": ["flutter", "boringssl", "ssl", "native"]
+    },
+    "cert-pinning/bypass-react-native": {
+      "description": "Bypass SSL pinning in React Native / Hermes apps (OkHttp + OkHttpClientProvider)",
+      "category": "cert-pinning",
+      "tags": ["react-native", "hermes", "ssl", "okhttp"]
+    },
+    "traffic/log-http-requests": {
+      "description": "Log all HTTP requests and responses via OkHttp and HttpURLConnection",
+      "category": "traffic",
+      "tags": ["http", "logging", "okhttp", "traffic"]
+    },
+    "traffic/log-websocket": {
+      "description": "Log WebSocket send/receive frames (text and binary)",
+      "category": "traffic",
+      "tags": ["websocket", "logging", "okhttp"]
+    },
+    "traffic/extract-json-bodies": {
+      "description": "Extract and pretty-print JSON request and response bodies",
+      "category": "traffic",
+      "tags": ["json", "http", "logging", "okhttp"]
+    },
+    "crypto/log-cipher-ops": {
+      "description": "Log javax.crypto.Cipher operations: algorithm, key, IV, plaintext/ciphertext",
+      "category": "crypto",
+      "tags": ["aes", "cipher", "crypto", "logging"]
+    },
+    "crypto/extract-aes-keys": {
+      "description": "Dump key bytes from SecretKeySpec, KeyGenerator.generateKey, and PBEKeySpec (PBKDF2)",
+      "category": "crypto",
+      "tags": ["aes", "keys", "secretkey", "pbkdf2", "crypto"]
+    },
+    "crypto/log-messagedigest": {
+      "description": "Log all MessageDigest hash operations (SHA-1, SHA-256, MD5, etc.) with inputs",
+      "category": "crypto",
+      "tags": ["sha256", "md5", "hash", "crypto", "logging"]
+    },
+    "root-detection/bypass-rootbeer": {
+      "description": "Bypass RootBeer library (com.scottyab.rootbeer) root detection",
+      "category": "root-detection",
+      "tags": ["rootbeer", "root", "bypass"]
+    },
+    "root-detection/bypass-generic": {
+      "description": "Bypass generic root detection: File.exists, Runtime.exec, Build.TAGS, PackageManager",
+      "category": "root-detection",
+      "tags": ["root", "bypass", "file", "generic"]
+    },
+    "root-detection/bypass-safetynet": {
+      "description": "Bypass SafetyNet Attestation and Play Integrity API attestation callbacks",
+      "category": "root-detection",
+      "tags": ["safetynet", "play-integrity", "gms", "attestation"]
+    },
+    "memory/dump-strings": {
+      "description": "Scan Java heap for live String objects and dump values (credentials, tokens, etc.)",
+      "category": "memory",
+      "tags": ["heap", "strings", "memory", "credentials"]
+    },
+    "memory/find-class-methods": {
+      "description": "List all methods, constructors, and fields of a class at runtime",
+      "category": "memory",
+      "tags": ["reflection", "methods", "introspection"]
+    },
+    "memory/trace-method-calls": {
+      "description": "Trace all calls to a specified method with arguments and return values",
+      "category": "memory",
+      "tags": ["trace", "methods", "args", "return"]
+    }
+  },
+  "groups": {
+    "all-pinning": [
+      "cert-pinning/bypass-okhttp",
+      "cert-pinning/bypass-trustmanager",
+      "cert-pinning/bypass-conscrypt"
+    ],
+    "all-root-bypass": [
+      "root-detection/bypass-rootbeer",
+      "root-detection/bypass-generic",
+      "root-detection/bypass-safetynet"
+    ]
+  }
+}
